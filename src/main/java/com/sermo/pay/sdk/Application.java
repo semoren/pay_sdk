@@ -25,13 +25,13 @@ public class Application extends SpringBootServletInitializer{
 		SpringApplication.run(Application.class, args);
 	}
 	
-	@Bean
+	/*@Bean
 	public MultipartConfigElement multipartConfigElement() {
 		MultipartConfigFactory factory = new MultipartConfigFactory();
 		factory.setMaxFileSize("5MB");
 		factory.setMaxRequestSize("5MB");
 		return factory.createMultipartConfig();
-	}
+	}*/
 	
 	protected SpringApplicationBuilder configure(SpringApplicationBuilder builder) {
 		return builder.sources(Application.class);
