@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<configuration>
+	<include resource="org/springframework/boot/logging/logback/base.xml" />
+	<appender name="infoLog"
+		class="ch.qos.logback.core.rolling.RollingFileAppender">
+		<File>E:/loginfo.log</File>
+		<encoder>
+			<pattern>%d{yyyy-MM-dd},%d{yyyy-MM-dd HH:mm:ss},%m%n</pattern>
+		</encoder>
+		<filter class="ch.qos.logback.classic.filter.ThresholdFilter">
+			<level>INFO</level>
+		</filter>
+		<rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+			<fileNamePattern>E:/loginfo.log.%d{yyyy-MM-dd}</fileNamePattern>
+		</rollingPolicy>
+	</appender>
+	<logger name="com.sermo.xx.web" level="INFO">
+		<appender-ref ref="infoLog" />
+	</logger>
+	<logger name="jdbc" level="off" />
+	<logger name="jdbc.sqltiming" level="info" />
+</configuration>
